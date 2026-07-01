@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}CLX Studio{% endblock %}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<nav class="nav">
+  <a href="/" class="nav__logo">
+    <img src="{% static 'images/logo.jpg' %}" alt="CLX Studio">
+    <span>CLX Studio</span>
+  </a>
+
+  <div class="nav__links">
+    <a href="#about">// about</a>
+    <a href="#projects">// projects</a>
+    <a href="#skills">// skills</a>
+    <a href="#contact">// contact</a>
+  </div>
+</nav>
+{% block content %}{% endblock %}
+<footer class="footer">
+  <span>CLX Studio &copy; {% now "Y" %}</span>
+  <a href="https://github.com/sarvar-vx" target="_blank">github.com/sarvar-vx</a>
+</footer>
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

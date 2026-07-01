@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="hero">
+  <div class="hero__text">
+    <p class="eyebrow">// backend developer</p>
+    <h1>I'm <span class="grad">Sarvar Qudratov.</span></h1>
+    <p class="hero__desc">Django, DRF va Aiogramda o'z tizimlarimni yarataman — boshidan oxirigacha o'zim qurib, deploy qilib, ishga tushiraman.</p>
+    <div class="hero__cta">
+      <a href="#projects" class="btn btn--primary">loyihalarni ko'rish</a>
+      <a href="#contact" class="btn btn--ghost">bog'lanish</a>
+    </div>
+  </div>
+  <div class="terminal">
+    <div class="terminal__bar">
+      <span class="dot dot--r"></span><span class="dot dot--y"></span><span class="dot dot--g"></span>
+      <span class="terminal__title">sarvar@clx-studio</span>
+    </div>
+    <div class="terminal__body" id="terminalBody">
+      <p><span class="prompt">$</span> whoami</p>
+      <p class="out">backend_developer</p>
+      <p><span class="prompt">$</span> stack --list</p>
+      <p class="out">python · django · drf · postgresql · docker</p>
+      <p><span class="prompt typing">$</span> <span id="typedLine"></span><span class="cursor">▍</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <p class="eyebrow">// about</p>
+  <h2>O'zim haqimda</h2>
+  <p class="section__text">Men 2025-yil TATU ni Kompyuter Injinering yo'nalishiga o'qishga kirdim,
+    u yerda 4 yil vaqtim behuda ketmasligi uchun, o'qishni tashladim va PDP akademiyada 6 oy web dasturlash yo'nalishida o'qidim,
+    moliyaviy sabablarga o'qishimni online o'zim davom ettirdim. Python, Django, DRF, Aiogram, PostgreSQL va Docker bilan amaliy loyihalar ustida ishladim va ishlamoqdaman.
+    Har bir loyihani boshidan oxirigacha o'zim qurib, VPS serverga deploy qilaman.</p>
+</section>
+
+<section class="section" id="projects">
+  <p class="eyebrow">// projects</p>
+  <h2>Loyihalar</h2>
+  <div class="grid">
+    {% for project in projects %}
+    <article class="card">
+      <span class="card__tag">$ project_0{{ forloop.counter }}</span>
+      <h3>{{ project.title }}</h3>
+      <p>{{ project.description }}</p>
+      <div class="card__tags">
+        {% for tag in project.tags.split %}
+        <span>{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% if project.github_url %}
+      <a href="{{ project.github_url }}" class="card__link" target="_blank">kodni ko'rish →</a>
+      {% endif %}
+    </article>
+    {% empty %}
+    <p class="section__text">Hozircha loyihalar yo'q.</p>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section" id="skills">
+  <p class="eyebrow">// skills</p>
+  <h2>Texnologiyalar</h2>
+  <div class="skills">
+    <span>Python</span><span>PostgreSQL</span><span>Aiogram</span><span>Docker</span><span>Git</span>
+    <span>Django</span><span>DRF</span><span>Nginx</span><span>Gunicorn</span><span>VPS Deploy</span>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <p class="eyebrow">// contact</p>
+  <h2>Bog'lanish</h2>
+  <p class="section__text">Loyiha yoki ish taklifi bormi? Yozib qoldiring.</p>
+  <div class="contact__links">
+    <a href="https://t.me/sarvar_vx" target="_blank" class="btn btn--primary">Telegram</a>
+    <a href="https://github.com/sarvar-vx" target="_blank" class="btn btn--ghost">GitHub</a>
+  </div>
+</section>
+
+{% endblock %}

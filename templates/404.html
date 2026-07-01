@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}404 | CLX Studio{% endblock %}
+{% block content %}
+<section class="hero" style="min-height: 70vh; display:flex; align-items:center;">
+  <div class="hero__text">
+    <p class="eyebrow">// error</p>
+    <h1><span class="grad">404</span> — sahifa topilmadi.</h1>
+    <p class="hero__desc">Siz qidirayotgan sahifa mavjud emas yoki o'chirilgan.</p>
+    <div class="hero__cta">
+      <a href="/" class="btn btn--primary">bosh sahifaga qaytish</a>
+    </div>
+  </div>
+  <div class="terminal">
+    <div class="terminal__bar">
+      <span class="dot dot--r"></span><span class="dot dot--y"></span><span class="dot dot--g"></span>
+      <span class="terminal__title">sarvar@clx-studio</span>
+    </div>
+    <div class="terminal__body">
+      <p><span class="prompt">$</span> GET {{ request.path }}</p>
+      <p class="out" style="color:#ff5f56;">Error 404: Not Found</p>
+      <p><span class="prompt">$</span> suggest --fix</p>
+      <p class="out">→ cd / (bosh sahifaga qayt)</p>
+    </div>
+  </div>
+</section>
+{% endblock %}
