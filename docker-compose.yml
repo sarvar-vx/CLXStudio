@@ -1,4 +1,12 @@
 services:
+  db:
+    image: postgres:15
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
   web:
     build: .
     restart: always
@@ -8,6 +16,8 @@ services:
       - static_volume:/app/staticfiles
     expose:
       - "8000"
+    depends_on:
+      - db
 
   nginx:
     image: nginx:alpine
@@ -21,4 +31,5 @@ services:
       - web
 
 volumes:
+  postgres_data:
   static_volume:
