@@ -33,7 +33,7 @@ docker compose exec web python manage.py createsuperuser
 
 ## Environment Variables
 
-```
+```env
 SECRET_KEY=your_secret_key
 DEBUG=False
 POSTGRES_DB=your_db
