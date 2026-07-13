@@ -20,11 +20,6 @@ Personal portfolio and personal brand platform showcasing completed projects, te
 ![Gunicorn](https://img.shields.io/badge/Gunicorn-499848?style=for-the-badge&logo=gunicorn&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
-## Requirements
-
-* Docker & Docker Compose
-* PostgreSQL
-
 ## Setup
 
 ```bash
